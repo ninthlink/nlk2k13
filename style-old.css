@@ -1,0 +1,462 @@
+/*
+Theme Name: NLK
+Theme URI: http://www.ninthlink.com/
+Description: WordPress Theme for Ninthlink, Inc. / www.ninthlink.com
+Version: 2.12
+Author: Ninthlink, Inc
+Author URI: http://www.ninthlink.com/
+Tags: fixed width, two columns, widgets
+
+	NLK 2.0
+	http://www.ninthlink.com/
+
+	This theme was designed by Matt Stallings http://www.mattstallings.com
+	and built by Alex Chousmith http://www.chousmith.com/
+
+	The CSS, XHTML and design is released under GPL:
+	http://www.opensource.org/licenses/gpl-license.php
+
+*/
+
+@font-face {
+    font-family: 'ML';
+    src: url('fonts/ml.eot');
+    src: url('fonts/ml.eot?#iefix') format('embedded-opentype'),
+         url('fonts/ml.woff') format('woff'),
+         url('fonts/ml.ttf') format('truetype'),
+         url('fonts/ml.svg#ML') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'MLB';
+    src: url('fonts/ml-bold.eot');
+    src: url('fonts/ml-bold.eot?#iefix') format('embedded-opentype'),
+         url('fonts/ml-bold.woff') format('woff'),
+         url('fonts/ml-bold.ttf') format('truetype'),
+         url('fonts/ml-bold.svg#MLB') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'AN';
+    src: url('fonts/an.eot');
+    src: url('fonts/an.eot?#iefix') format('embedded-opentype'),
+         url('fonts/an.woff') format('woff'),
+         url('fonts/an.ttf') format('truetype'),
+         url('fonts/an.svg#AN') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'RP';
+    src: url('fonts/rp.eot');
+    src: url('fonts/rp.eot?#iefix') format('embedded-opentype'),
+         url('fonts/rp.woff') format('woff'),
+         url('fonts/rp.ttf') format('truetype'),
+         url('fonts/rp.svg#RP') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* and then */
+
+body { margin: 0; padding: 0; font-family: Arial, Helvetica, sans-serif; font-size: 12px; line-height: 150%; color: #666; background: url(images/bg.jpg) no-repeat top center; text-align: center }
+a img { border: none }
+a { text-decoration: none; color: #869d26 }
+a:hover { text-decoration: underline }
+blockquote { font-style: italic }
+
+#page { display:block; width: 978px; margin: 0 auto; text-align: left }
+#hdr { float: left; width: 972px; height: 549px; padding: 0 3px }
+#nlk { float:left; width: 189px; height: 91px; padding: 0 7px; /*background:url(images/logo.png) no-repeat 0 0;*/ position: relative; z-index: 3 }
+* html #nlk { background: none }
+#nlk a { float: left; width: 189px; height: 84px; text-indent: -999em; background: url(images/ninthlink2.gif) no-repeat 0 0 }
+#hdr ul.nav { float: right; margin: 25px 0 0; list-style: none; padding: 0 }
+#hdr ul.nav li { float: left; padding: 0 37px; height:25px; background: url(images/nli.gif) no-repeat 100% 0 }
+#hdr ul.nav li.menu-item-5720 { padding-left: 0 }
+#hdr ul.nav li.menu-item-6278 { background: none }
+#hdr .nav a { float: left; width: 72px; height: 25px; background: url(images/nav.gif) no-repeat 0 0; text-indent:-999em }
+#hdr .nav a:hover, body.serv #hdr .nav .menu-item-6982 a, body.pl #hdr .nav .menu-item-6982 a { background-position: 0 -25px }
+#hdr .nav .menu-item-6983 a { width: 43px; background-position: -72px 0 }
+#hdr .nav .menu-item-6983 a:hover, #hdr .nav .menu-item-6983.current_page_item a, #hdr .nav .menu-item-6983.current-page-ancestor a { background-position: -72px -25px }
+#hdr .nav .menu-item-5722 a { width: 49px; background-position: -115px 0 }
+#hdr .nav .menu-item-5722 a:hover, #hdr .nav .menu-item-5722.current_page_item a { background-position: -115px -25px }
+#hdr .nav .menu-item-6984 a { width: 38px; background-position: -164px 0 }
+#hdr .nav .menu-item-6984 a:hover, body.blog #hdr .nav .menu-item-6984 a { background-position: -164px -25px }
+#hdr .nav .menu-item-6278 a { width: 67px; background-position: -202px 0 }
+#hdr .nav .menu-item-6278 a:hover, #hdr .nav .menu-item-6278.current_page_item a { background-position: -202px -25px }
+
+body.home { background: #000 url(images/home.png) repeat-x 0 0 }
+
+#bimg { position: absolute; top: 76px; left: 0; display: none; width: 100%; min-width:978px; height: 473px; overflow:hidden }
+#bimg img { position: absolute; top: 0; left: 0 }
+
+h1 { font-family: "ML"; font-size: 33px; line-height: 37px; margin: 0 0 12px }
+h1 strong { font-weight: normal; color: #000 }
+h2 { font-family: Arial, Helvetica, sans-serif; font-size: 20px; font-weight: bold; line-height: 24px; margin: 0 }
+h3 { font-family: Arial, Helvetica, sans-serif; font-size: 17px; line-height: 28px; margin: 0 0 18px }
+h4 { font-family: "MLB"; font-size: 16px; line-height: 18px }
+#main.home h1 { font-family: "ML"; font-size: 22px; line-height: 28px; margin: 10px 0 0 }
+h3#comments, #respond h3 { float: left; font-family: "ML"; line-height:20px; width: 608px }
+h3#comments a { display: inline !important }
+code { display: block; padding: 7px 10px 10px; background-color:#999; color: #fff }
+
+#main { float:left; width: 578px; margin: 33px 29px 0 39px }
+#main h1 { width: 587px }
+#right { float: left; width: 280px; margin: 20px 0 0 36px; position: relative }
+#right h3 { color: #000; font-family: "ML"; font-size: 18px; line-height: 20px; margin: 0 }
+#right.pts { width: 296px }
+#right.pts ul { font-size: 14px; line-height: 23px; position: relative; left: -2em }
+#right.pts h2, #clients h2, .wpcf7 h2 { color: #666; font-family: "ML"; font-size: 21px; line-height: 25px; margin: 0 }
+#right.pts h2 strong { color: #000; font-weight: normal }
+body.author #right { margin-top: 36px; padding-top: 13px }
+body.author #right #fbl { position: absolute; top: 0; left: 0 }
+#right.request { margin: 0; top: -32px; float: right; width: 318px }
+#right.request h3 { float: left; width: 318px; height: 122px; text-indent: -999em; font-family: Arial; background: url(images/request.png) no-repeat 0 0 }
+#right.request p { margin: 0 }
+
+body.blog #main, body.archive #main { width: 607px; margin-right: 0 }
+body.blog .post { float: left; width: 608px; border-bottom: 1px dotted #aaa595; margin-bottom: 60px }
+body.blog .post h2.title { font-family: "ML"; font-size: 25px; line-height: 27px }
+body.blog .post h2.title, body.blog .post h2.title a { color: #000 }
+body.blog .post .entry-content img { border: 1px solid #ccc }
+body.blog .post img.alignnone { width: 606px; height: auto }
+body.blog .post img.aligncenter { display:block; margin: 0 auto }
+body.blog .post div.wp-caption { display: block; margin: 12px 0 }
+.meta { float: left; width: 608px; border-top: 1px dotted #aaa595 }
+
+body.digi #main { margin-left:12px }
+body.digi #main, body.digi.blog .post, body.digi .meta { width:960px }
+
+.meta a.thm { float: left; margin: 0 10px 0 0; border: 1px solid #999 }
+.meta .inf { float: left; padding-top: 4px; line-height: 21px }
+.sha { float: right; position: relative }
+.sha .sb { float: left; height:29px; padding: 10px 2px; border-left: 1px dotted #aaa595 }
+.sha .sb.c { border-right: 1px dotted #aaa595 }
+.sha .stButton .stFb_bottom, .sha .stButton .stFb_text, #topalt { display: none }
+.sha .sb.c a { background: url(images/sh.jpg) no-repeat 0 0; width: 28px; height: 27px; margin-right: 11px; padding:0; position: relative; top: -18px }
+.sha .sb.p1 { height: 27px; padding: 22px 2px 0 }
+
+.sha .sb.c a { background-position: -108px 0; color: #999; float: left; font-size: 11px; width: 20px; height: 27px; text-align: center; margin: 5px 0 0 5px; padding: 3px 0 0 22px; top:0 }
+#respond { float: left; width: 608px }
+#respond textarea { width: 608px }
+.commentlist { float: left; padding: 0 40px 40px; width: 528px; margin-bottom: 60px; border-bottom: 1px dotted #aaa595 }
+
+.block { float: left; width: 270px; border-bottom: 1px dotted #aaa595; padding: 19px 0 5px }
+.block.links ul { margin: 7px 0 14px; padding: 0; list-style: none }
+.block.links.posts ul li { margin-bottom: 5px }
+.block.links ul li a { color: #333 }
+.block #pixhere { float: left; width: 304px; position: relative; left: -16px; margin:14px 0 26px }
+.block .pic { float: left; width: 74px; height: 74px; background: url(images/pic.png) no-repeat 0 0; margin: 0 2px 3px 0 }
+.block .pic a { float: left; width: 65px; height: 65px; overflow: hidden; margin: 3px 0 0 4px; position: relative }
+.block .pic a img { display: block; width: 65px; position: absolute; top: 0; left: 0 }
+.block .pic a img.l { width: auto; height: 65px }
+.block.tweet { font-size: 16px; line-height:135% }
+.block.join { border-bottom: none }
+.block.join ul { float: left; margin: 22px 0 0; padding: 0; list-style: none; width: 304px; position: relative; left: -15px }
+.block.join ul li { float: left; width: 74px; height: 82px; margin: 0 2px 2px 0; background:url(images/team.png) no-repeat 0 0 }
+.block.join ul li a { float: left; margin: 3px 0 0 4px }
+.block#months { position: relative }
+.block#months select { position: absolute; top: 19px; left:135px }
+.block.links#months ul { float: left }
+.block.links#months ul li { float: left; width: 135px }
+
+#frap { float: left; width: 100%; background: #282828; color: #fff; padding: 20px 0; margin-top: 53px; min-width:984px }
+#ftr { display:block; width: 984px; margin: 0 auto; text-align: left }
+
+#main.home { width: 975px; margin: 0; position: relative; z-index: 10; padding: 348px 0 0 9px; color: #fff  }
+#main.home .post { float: left; width: 561px }
+#main.home .post h2 { font-family: Arial, Helvetica, sans-serif; font-size: 15px; line-height: 22px; margin: 15px 0 0 }
+#main.home .entry h2 a { color: #869D26; display: block; font-family: "MLB"; font-size: 14px; line-height: 22px; margin-top: 17px}
+#main.home .post br { display: none }
+#home { display:block; width: 100%; min-width: 1058px; height: 473px; overflow:hidden; position: absolute; top: 76px; left: 0; z-index: 2; background-position: top center; background-repeat: no-repeat }
+#home img { position: absolute; top: 0 }
+#home img.off { top: 475px }
+#home a#study { display: block; width: 183px; height: 37px; background: url(images/fx.gif) repeat 0 0; position: absolute; top: 356px; left: 0 }
+#sly, #ourteam { width:900px; position: absolute; top: -24px; text-align:center; overflow:hidden }
+#ourteam { display: block; float: left; width: 534px; margin: 0; padding: 0; list-style: none; top: -56px; left: 194px; z-index:300; overflow: visible }
+#sly .thm, #ourteam li { width: 34px; height: 24px; background: url(images/page.png) no-repeat -80px 0; margin:0 -2px; display: inline-block }
+#ourteam li { float: left; margin: 0; position: relative }
+#sly .thm.on, #ourteam li.here { background-position: -46px 0 }
+#sly .thm a, #ourteam li a { color: #999; text-decoration: none; width: 100%; line-height: 24px; display: inline-block }
+#ourteam li a { float: left }
+#ourteam li a span.thm, .ngg-clear { display: none }
+#ourteam li a:hover { color: #ADBD3B }
+#ourteam li a:hover span.thm { display: block; position: absolute; left: -20px; top: -81px; padding: 4px; width: 66px; height: 81px; background:url(images/pop.png) no-repeat 0 0 }
+#sly .thm.on a, #ourteam li.here a { color: #333 }
+#ourteam li.p, #ourteam li.n { width: 46px; background: none }
+#sly a.p, #sly a.n, #ourteam li.p a, #ourteam li.n a { display: inline-block; width: 46px; height: 24px; background: url(images/page.png) no-repeat 0 0; text-indent: -999em; margin: 0 -2px; vertical-align: top }
+#ourteam li.p a, #ourteam li.n a { margin: 0; float: left }
+#sly a.n, #ourteam li.n a { width: 42px; background-position: -114px 0 }
+#sly a.p:hover, #ourteam li.p a:hover { background-position: -156px 0 }
+#sly a.n:hover, #ourteam li.n a:hover { background-position: -202px 0 }
+.gal .thm div { display: inline-block; margin: 0; text-align: center; width: 100% }
+
+#pros { width: 960px; height: 72px; position: absolute; top: 15px; left: -10px; padding: 0 20px; background: url(images/pli.png) no-repeat 19px 0 }
+#pros .thm { float: left; padding-right: 1px; background: url(images/pli.png) no-repeat top right }
+#pros a { float: left; width: 159px; height: 72px; overflow: hidden; position: relative }
+#pros a img { height: auto }
+#pros a:hover img, #pros .on a img { position: absolute; top: -72px; left: 0 }
+#pros div.thm.firstslide { display: none }
+
+#steps { float: left; width: 997px; height: 177px; background: url(images/steps.png) no-repeat 0 0; position: absolute; top: 139px; left: -24px; color: #666 }
+#steps div { float: left; display: inline; width: 259px; position: relative; margin: 0 5px 0 60px; font-size: 13px; line-height: 135% }
+#steps h3 { color: #000; font-family: Arial, Helvetica, sans-serif; font-size: 20px; line-height: 24px; margin: 15px 0 14px }
+#main.home .post #steps br { display: inline }
+#lo { color: #fff; display: inline; float: left; width: 304px; margin-left: 78px; padding: 12px 0 0 32px; font-size: 13px; line-height:17px }
+#lo h4 { font-size: 11px; line-height: 15px; font-family: "MLB"; margin: 0 }
+#lo h4 a { color: #fff }
+#lo h3 { font-size: 18px; margin: 2px 0 5px }
+#lo h3 a { color: #fff }
+#lo p { margin: 0; display:block; height: 96px }
+#lo p a { color: #869D26; font-weight: bold }
+body.sh, body.blog { background-image: url(images/bgs.jpg) }
+body.sh { color: #666 }
+body.sh #hdr, body.blog #hdr { height: 199px }
+#sh { float: left; width: 944px; padding: 25px 9px 0 }
+#shm { position: absolute; top: -109px; left: 330px; width: 600px; font-family: "ML"; font-size: 26px; line-height: 28px; color: #ccc }
+#shm.fresh { left: 456px; width: 474px }
+#shm a { color: #ccc; text-decoration: underline }
+body.study #sh { padding: 0; position: relative; left: 6px; top: 40px; width: 960px; background: #fff; border: solid #ccc; border-width: 1px 1px 0 }
+body.study #sh img { display: block; margin: 0 auto }
+body.study #main { border: solid #ccc; border-width: 0 1px 1px; margin: 413px 0 0 9px; text-align: center; width: 960px }
+body.study.page-id-5427 #main { margin-top: 310px }
+body.study #main img, body.study #main embed { margin: 0 5px 50px }
+body.study a#backB { color: #ACBD3A; float: left; display: inline; margin: 20px 0 0 39px }
+body.study a#back { position: absolute; top: -518px; left: 30px; color: #ACBD3A }
+#snav { position: absolute; top: -518px; right: 0; font-size: 15px }
+#snavB { float: right; margin: 20px 9px 0 0; font-size: 15px }
+#snav a { color: #ccc }
+#snavB a { color: #666 }
+#snav, #snav a.p, #snavB, #snavB a.p, #snavB .p a { color: #999 }
+body.study.page-id-5427 #sh { padding:29px 0 0 29px; width: 931px } /* jacuzzi */
+body.study.page-id-5427 a#back, body.page-id-5427 #snav { top: -413px }
+body.blog #shm div { display: none }
+body.blog #shm div.on { display: block }
+body.blog #shm div a { text-decoration:none }
+#shm .arr { display: block; position: absolute; top: 0; left: -60px; width: 36px; height: 31px; background: url(images/ar.gif) no-repeat 0 0 }
+#shm .arr a { float: left; width: 18px; height: 31px; background: url(images/fx.gif) repeat 0 0 }
+
+body.pl { background-image: url(images/bg-price.jpg) }
+body.pl #bimg { width: 973px; height: 543px; margin: 0 auto; position: relative; top: -1px; display: block }
+body.pl #hdr { height: 646px }
+body.pl #main { color: #fff; margin:11px 26px 0 30px; width: 622px }
+body.pl #main p { font-size: 14px; line-height:20px }
+body.pl #main h3 { text-transform:uppercase; font-family:"ML"; font-size: 15px }
+body.pl #main h3 strong { font-weight: normal; color: #9BCA13 }
+body.pl #main h3 strong a { text-decoration:underline; color: #9BCA13 }
+#mayn { float: left; width: 176px; height: 147px; background: url(images/mayneed.gif) no-repeat 0 0; color: #fff; padding: 64px 22px 0 48px }
+#mayn a { color: #fff; font-weight: bold }
+#mayn h3 { color: #9BCA13; font-family: "ML"; font-size: 13px; line-height: 18px }
+
+body.blog.author { background-image: url(images/bgt.jpg) }
+body.blog #main, body.sh #main { position: relative }
+body.blog.author #hdr { height: 448px }
+#us { float: left; position: absolute; left: -62px; top: -424px; padding: 48px 0 0 385px; width: 544px; z-index: 200; color: #ccc; font-size: 17px; line-height: 24px  }
+#us img.photo { position: absolute; top: 0; left: 0 }
+#us h1 { font-size: 32px; margin: 0 0 35px 5px }
+#us h1 em { font-style: normal; font-family:"AN"; text-transform:lowercase; color: #ADBD3B; position: relative; top: 5px; left: 8px }
+#ab { float: left; width: 534px; height: 140px; margin: 0 0 0 5px }
+#us div.count { float: left; width: 72px; height: 43px; padding: 32px 0 0; font-family: "MLB"; font-size: 22px; line-height:
+ 24px; text-align: center; background: url(images/pt.jpg) no-repeat 0 0; position: relative }
+#us div.count.tweet { background-position: -72px 0 }
+#us div.count .fx { display: block; width: 56px; height: 2px; position: absolute; left: 8px; top: 42px; background: url(images/cli.gif) repeat-x 0 0; z-index: 400 }
+#us .me { float: left; margin: 33px 0 0 39px; width: 360px }
+#us .me h3 { float: left; margin: 0; width: 95px; font-family: "AN"; font-size: 28px; line-height: 30px }
+#us .me ul { float: left; margin: 0; padding: 0; list-style: none; width: 265px }
+#us .me ul li { float: left; margin: 1px 0 0 7px }
+#us .me ul li a { float: left; width: 21px; height: 20px; text-indent: -999em; background: url(images/spri.gif) no-repeat 0 0 }
+#us .me ul li a:hover { background-position: 0 -20px }
+#us .me ul li.tw a { background-position: -21px 0 }
+#us .me ul li.tw a:hover { background-position: -21px -20px }
+#us .me ul li.li a { background-position: -42px 0 }
+#us .me ul li.li a:hover { background-position: -42px -20px }
+#us .me ul li.fl a { background-position: -63px 0 }
+#us .me ul li.fl a:hover { background-position: -63px -20px }
+#us .me ul li.rss a { background-position: -84px 0 }
+#us .me ul li.rss a:hover { background-position: -84px -20px }
+#us .me ul li.fm a { background-position: -105px 0 }
+#us .me ul li.fm a:hover { background-position: -105px -20px }
+#us .me ul li.pi a { background-position: -126px 0 }
+#us .me ul li.pi a:hover { background-position: -126px -20px }
+#us .me ul li.yt a { background-position: -147px 0 }
+#us .me ul li.yt a:hover { background-position: -147px -20px }
+#us .me ul li.vm a { background-position: -168px 0 }
+#us .me ul li.vm a:hover { background-position: -168px -20px }
+#us .me ul li.gp a { background-position: -189px 0 }
+#us .me ul li.gp a:hover { background-position: -189px -20px }
+
+.nln { display: block; width: 589px; height: 8px; border-top: 1px solid #ccc }
+
+#be2 h1, #fnav li a, #bar .fbox h3 a, #ftr h4 { font-family: "RP"; font-size: 15px; font-style: italic; line-height: 19px; letter-spacing: 0.02em }
+
+#be2 { height: 416px; background: url(images/nbg.jpg) no-repeat left bottom }
+#be2 h1 { margin: 0 }
+#be2 input.txt { display:block; font-family: Arial, Helvetica, sans-serif; font-size: 13px; line-height: 18px; padding: 4px 16px; width: 248px; height: 18px; background: url(images/ntxt.png) no-repeat 0 0; border: none; margin: 8px 0  }
+
+#bt { float: left; width: 930px; margin: 33px 0 0 15px }
+#bt h4 { margin: 0 0 5px 24px; font-family: "ML"; font-size: 15px; line-height: 18px }
+#bt h4 a { color: #333; text-decoration:none }
+#btick { float: left; width: 611px; position: relative }
+#btick .arr a { display: block; width: 18px; height: 72px; background: url(images/ar2.gif) no-repeat 0 0; position: absolute; top: 44px; left: -19px }
+#btick .arr a.n { left: 610px; background-position: -17px 0 }
+#btick .post { float: left; width: 528px; padding: 0 59px 0 24px; display: none }
+#btick .post.on { display: block }
+#btick .post h2 a { font-family: "ML"; font-size: 25px; line-height: 27px; color: #666 }
+#btick .post img { float: left; width: 139px; height: auto; margin-right: 12px; border: 1px solid #8e8e8e; position: relative; left: -2px }
+#bt #tweets { float: left; width: 260px; margin: 8px 0 0 59px; font-size: 16px; line-height:135%; padding: 0; border: none}
+#tweets h3 { font-family: "ML"; font-size: 18px; line-height: 18px; margin: 0 }
+#bt #tweets small, #right .block.tweet small { font-size: 11px; line-height: 135% }
+.block h3 a.i { display: inline-block; width:18px; height: 15px; text-indent: -999em; background: url(images/twitterbird.gif) no-repeat 0 0; position: relative; top: 3px; left: 7px;}
+.block.flickr h3 a.i { width:32px; height: 16px; background-image: url(images/rif.jpg); top: 0 }
+.block.picasa h3 a.i { width:18px; background-image: url(images/rip.jpg) }
+.block.fm h3 a.i { width:18px; background-image: url(images/ril.jpg); top: 0 }
+.block.vimeo object { margin: 14px 0 26px; position: relative; left: -13px; float: left }
+.block.vimeo h3 a.i { width: 18px; background-image: url(images/riv.gif) }
+
+.block.com { border: none; font-size: 14px; line-height: 24px }
+.block.com ul { position: relative; left: -1em;  }
+.block.com a.cp { display: block; width: 221px; height: 19px; padding: 11px; font-family: Arial, Helvetica, sans-serif; font-size: 17px; line-height: 19px; color: #fff; text-align: center; background: url(images/pro.gif) no-repeat 0 0 }
+
+#clients { float: left; width: 980px }
+#clients h2 { margin: 32px 0 14px 39px }
+a.pthm { float: left; width: 175px; padding: 6px 0 0 17px; height: 208px; background: url(images/pthm.png) no-repeat 0 0; margin-left: 4px; font-size: 13px; font-weight: bold; color: #333 }
+a.pthm:hover { color: #869D26; text-decoration: none }
+a.pthm img { position: relative; margin: 0 0 13px -6px }
+#clients div { float: left; width: 186px; margin: 33px 0 0 10px }
+#clients div.thms { width: 980px; margin: 0; position: relative }
+#clients div ul { list-style: none; margin: 0 0 18px; padding: 0 }
+a.gbtn { float: left; width: 253px; height: 25px; font-family: "ML"; font-size: 18px; line-height: 24px; color: #fff; padding: 6px 18px; background:url(images/gbtn.png) no-repeat 0 0 }
+a.gbtn:hover { text-decoration: none; background-position: 0 -37px }
+#clients div.thms a.prev, #clients div.thms a.next { float: left; width: 59px; height: 81px; background: url(images/pn.jpg) no-repeat 0 0; position: absolute; top: 63px; left: -49px }
+#clients div.thms a.next { left: auto; right: -55px; background-position: -59px 0 }
+
+#ftr ul { float: left; list-style: none; margin: 0; padding: 0 }
+#fnav ul { width: 167px }
+#fnav li { float: left; width: 137px; height: 129px; border-right: 1px dotted #656565; padding-left: 41px }
+#fnav li#menu-item-7023 { margin: 0 0 0 17px; width: 190px } /*the company*/
+#fnav li#menu-item-5719 { margin: 0 30px 0 6px; width: 172px } /*the team*/
+#fnav li a { color: #fff; margin: 4px 0 12px }
+#fnav li li { border-right: 0; padding: 0; height: auto }
+#fnav li li a { font-family: Arial, Helvetica, sans-serif; font-size: 12px; line-height: 20px; color: #ccc; margin: 0; letter-spacing: 0 }
+
+#bar { float: left; display: inline; margin-left:12px; width: 970px; position: relative; top: -20px; z-index:999 }
+#bar.flo { position: fixed; left: 50%; margin-left: -481px; top: auto; bottom: 0 }
+#bar.flo.no { left: 0; margin-left: 12px }
+#bar .fbox { float: left; width: 318px; position: absolute; bottom: 0; background:url(images/fbx.png) no-repeat 0 0 }
+#bar .fbox.soc { left: 323px }
+#bar .fbox.quot { left: 645px }
+#bar .fbox h3 a { margin: 0; float: left; color: #D2D983; padding: 6px 25px 7px; width: 268px; background:url(images/fbx.gif) no-repeat 289px -1px }
+#bar .fbox.soc h3 a { color: #7FCADF; background-position: -34px -1px }
+#bar .fbox.quot h3 a { color: #EFC40D; background-position: -357px -1px }
+#bar .fbox .bin { display: none }
+#bar .fbox.on .bin { display: block; float: left; margin: 10px }
+#bar .fbox.soc.on .bin { margin: 2px 8px 8px }
+#bar .fbox.on h3 a { background-position: 289px -32px }
+#bar .fbox.soc.on h3 a { background-position: -34px -32px }
+#bar .fbox.quot.on h3 a { background-position: -357px -32px }
+#bar .fbox.quot.on .bin { width: 290px; margin: 6px 12px 12px; background: #fff url(images/req.gif) no-repeat 0 0 }
+#bar .fbox.quot.on .bin.thx { background: #000 url(images/thx.jpg) no-repeat top center; height: 250px }
+#bar .quot form { float: left; margin: 46px 15px 0; color: #333 }
+#bar .quot p { margin: 0 }
+.wpcf7 label { display: block; margin-top: 10px }
+.wpcf7 label.jq { float: left; margin: 0; line-height:12px; position: relative; top: 18px; left: 6px; z-index: 2; cursor:text }
+.wpcf7 label.jq.bye { z-index: -1 }
+.wpcf7 input.txt, .wpcf7 textarea { width: 250px; border: 1px solid #ccc; padding: 4px; font-family: Arial, Helvetica, sans-serif; font-size: 13px; line-height: 16px }
+#main .wpcf7 input.txt { margin: 4px 0 7px }
+#main .wpcf7 textarea { margin: 4px 0 19px }
+.wpcf7 .wpcf7-list-item { margin: 0 0 4px }
+#bar .quot textarea { height: 60px }
+#bar .wpcf7-response-output { position: absolute; top: 41px; left: 0; background-color: #fff }
+#bar .wpcf7-submit { float: right; width: 93px; height: 25px; border: none; background: url(images/req.jpg) no-repeat 0 0; text-align: left; color: #fff; padding: 0 15px; font-family: Arial, Helvetica, sans-serif; font-size: 13px; line-height: 25px; margin: 9px 0; cursor:pointer }
+.wpcf7-list-item { display: block; margin: 10px 0 } 
+#right.request .wpcf7 input.txt, #right.request .wpcf7 textarea { width: 308px }
+#right.request input.wpcf7-submit { float: right; border: none; background: url(images/rbtn.png) no-repeat 0 0; padding-left: 14px; text-align: left; font-size: 12px; line-height: 15px; font-family: Arial, Helvetica, sans-serif; color: #fff; cursor:pointer; margin-top: 7px; width: 93px; height: 25px } 
+#right.request input.wpcf7-submit:hover { background-position: 0 -25px }
+
+#ftr #bar .bin ul.tabs { width: 303px }
+#ftr #bar .bin ul.tabs li { float: left; margin-right: 3px }
+#ftr #bar .bin ul.tabs li a { float: left; width: 98px; height: 27px; color: #fff; background: url(images/stabs.gif) no-repeat top right; font-size: 13px; line-height: 27px; font-family: Arial, Helvetica, sans-serif; text-align:center }
+#ftr #bar .bin ul.tabs li.on a { background-position: 0 0; color: #000 }
+#bar .bin .tab { display: none }
+#bar .bin .tab.on { float: left; display: block; width: 300px; background-color: #fff }
+#bar .bin .tab p { margin: 0 23px; padding: 6px 0; border-bottom: 1px solid #ccc; color: #333; font-weight: bold; font-size: 13px; line-height: 17px; font-family: Arial, Helvetica, sans-serif }
+#bar .bin .tab p a { color: #333 }
+#bar .bin .tab p small { font-weight: normal; font-size:11px; color: #666 }
+#bar .bin .tab p.last { font-size: 12px; padding: 2px 0 5px; border-bottom: none }
+#bar .bin .tab p.last a { color: #869d26; font-family: "ML" }
+#be { float: left; width: 280px; margin: 0; padding: 0 }
+#ftr h4 { color: #ccc; margin: 2px 5px }
+#be input.txt { float: left; width: 266px; padding: 0 7px; font-weight: bold; font-size: 13px; line-height: 26px; font-family: Arial, Helvetica, sans-serif; height:26px; color:#fff; margin: 7px 0 0 ; border: none; background: url(images/ftxt.png) no-repeat 0 0 }
+#be input.sub { float: right; margin: 11px 0 0 }
+
+#ftr .end { float: left; display: inline; width: 931px; border-top: 1px dotted #656565; margin: 23px 0  0 13px; padding:15px 0 0 25px }
+#ftr .end .alignleft { font-size: 13px; color: #999; line-height: 16px; width: 609px }
+#ftr .end .alignleft span { display: block; font-size:12px; margin-top: 4px }
+#ftr .end .alignleft a { color: #999 }
+#ftr .end .alignleft span a { font-size: 11px }
+#ftr .end .alignright h4 { float: left; width: 156px }
+ul#fn li { float: left; margin-right: 10px }
+ul#fn li a { float: left; width: 21px; height: 20px; text-indent:-999em; background: url(images/ficons.jpg) no-repeat 0 0 }
+ul#fn li#t a { background-position: -21px 0 }
+ul#fn li#l a { background-position: -42px 0 }
+ul#fn li#r a { background-position: -63px 0 }
+
+.sfx { float: left; width: 850px; padding: 0; border: 1px solid #e4e4e4; position: relative; margin: 20px 22px }
+.sfx .in { float: left; width: 850px; height: 373px; overflow: hidden; position: relative }
+.sfx .in img { position: absolute; top: 0; left: 850px; width: 850px; height: auto }
+.sfx .in img.on { left: 0 }
+.sfx a { position: absolute; top: 0; left: -60px; display: block; width: 59px; height: 100%; background: url(images/pn.jpg) no-repeat left center }
+.sfx a.n { left: auto; right: -60px; background-position: -59px 50% }
+
+a.vstudy, a.vwww { float: right; width: 142px; height: 39px; background: url(images/view.png) no-repeat 0 0; text-indent:-999em; position: relative; top: -20px; right: -291px }
+a.vwww { background-position: 100% 0 }
+a.vstudy.now, a.vwww.now { width: 148px; right: -155px }
+
+.alignleft { float: left }
+.post img.alignleft { margin: 0 12px 12px 0 }
+.alignright { float: right }
+.post img.alignright { margin: 0 0 12px 12px }
+
+/* our services */
+body.serv #bimg { height: 621px }
+#serv { float: left; width: 947px; height: 568px; color: #ccc; position: relative; margin: -429px 0 0 33px }
+#serv h1, #serv .tab, #serv #images { display: none }
+#serv h2.tabs { display: inline; margin-right: 100px; font-size: 18px; font-weight: normal }
+#serv h2.tabs a { color: #ccc }
+#serv h2.tabs.on a { color: #fff; text-decoration:underline }
+#serv .tab.on { display: block; position: absolute; top: 77px; left:0; width: 961px }
+#serv h3 { float: left; font-family: "ML"; font-size: 37px; line-height: 47px; color: #fff; width: 611px; margin: 0 30px 0 0; letter-spacing:-0.95pt }
+#serv ul { float: left; width: 320px; list-style-position:inside; margin: 10px 0 0; padding: 0; font-size: 14px }
+#serv ul li { float: left; width: 160px; margin-bottom: 11px }
+
+*:focus {
+outline: none;
+}
+
+/* cf7 */
+div.wpcf7 { margin: 0; padding: 0 }
+div.wpcf7-response-output {	margin: 2em 0.5em 1em; padding: 0.2em 1em }
+div.wpcf7-mail-sent-ok { border: 2px solid #398f14 }
+div.wpcf7-mail-sent-ng { border: 2px solid #ff0000 }
+div.wpcf7-spam-blocked { border: 2px solid #ffa500 }
+div.wpcf7-validation-errors { border: 2px solid #f7e700 }
+span.wpcf7-form-control-wrap { position: relative }
+span.wpcf7-not-valid-tip { position: absolute; top: 20%; left: 20%; z-index: 100; background: #fff; border: 1px solid #ff0000; font-size: 10pt; width: 280px; padding: 2px }
+span.wpcf7-not-valid-tip-no-ajax { color: #f00; font-size: 10pt; display: block }
+span.wpcf7-list-item { margin-left: 0.5em }
+div.wpcf7 img.ajax-loader { border: none; vertical-align: middle; margin-left: 4px }
+.wpcf7-display-none { display: none }
+#wcount_Needs2 { display: inline-block; width: 23px }
+
+/*homepage*/
+#freeform { position: absolute; top: 190px; left: 872px; z-index: 999; width: 269px; text-align: center }
+#freeform h3 { display: block; width: 182px; height: 48px; margin: 0 auto 20px; background: url(images/free-website-consultation.gif) no-repeat 0 0; text-indent:-999em }
+#freeform .wpcf7 input.txt { margin-bottom: 10px; color: #000 }
+#homebtn { display: block; width: 180px; height: 45px; margin: 8px auto 0; font-size: 17px; color: #fff; font-weight: bold; text-align: center; cursor: pointer; background: url(images/contact.png) no-repeat 0 0; border: none; font-family: Arial, Helvetica, sans-serif }
+
+#ftr .end .alignleft span#resourceftr { display: none }
